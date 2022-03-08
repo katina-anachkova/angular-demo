@@ -1,0 +1,1 @@
+#demo project - setuping a project and basic understanding of angular
