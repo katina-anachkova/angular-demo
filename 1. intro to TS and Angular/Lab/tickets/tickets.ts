@@ -1,38 +1,47 @@
-class Ticket {
-    destination: string;
-    price: number;
-    status: string;
+function ticketsList(tickets: string[], criteria: string) {
 
-    constructor(destination: string,price: number,status: string){
-        this.destination = destination;
-        this.price=price;
-        this.status = status;
-    }
-}
+    const result: Ticket[] = [];
 
-let solve = (arr: any, criteria: string) => {
-    let ticketArr = [];
-    for (let el of arr) {
-        let [dest, price, status] = el.split('|');
+    class Ticket {
+        destination: string;
+        price: number;
+        status: string;
 
-        let ticket = new Ticket (dest, price,status);
-        
-        ticketArr.push(ticket);
-    };
-
-    for (let ticket of ticketArr) {
-        
+        constructor(destination: string, price: number, status: string) {
+            this.destination = destination;
+            this.price = price;
+            this.status = status;
+        }
     }
 
+    for (let currentTicket of tickets) {
+        // const ticketData: string[] = currentTicket.split('|');
+        let [dest, price, stat]: string[] = currentTicket.split('|');
+        const ticket = new Ticket(dest, Number(price), stat);
+        result.push(ticket);
+    }
 
+    switch (criteria) {
+        case 'destination':
+            result.sort((a: Ticket, b: Ticket) => a.destination.localeCompare(b.destination));
+            break;
+        case 'price':
+            result.sort((a: Ticket, b: Ticket) => a.price - b.price);
+            break;
+        case 'status':
+            result.sort((a: Ticket, b: Ticket) => a.status.localeCompare(b.status));
+            break;
+    }
+
+    console.log(result);
 }
 
-solve([
-    'Philadelphia|94.20|available',
+
+
+ticketsList(['Philadelphia|94.20|available',
     'New York City|95.99|available',
     'New York City|95.99|sold',
     'Boston|126.20|departed'
 ],
-    'destination')
-
-
+    'status'
+);
