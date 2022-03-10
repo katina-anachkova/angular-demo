@@ -7,10 +7,12 @@ import { Article } from '../models/article.model';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+
   private symbols: number = 250;
+  
   @Input() article: Article[] = []; //comes from parent
- //comes from parent
   @Input() articleDesc: string = ''; //comes from parent
+
   descToShow: string;
   articleDescLen: number;
   showReadMoreBtn: boolean = true;
@@ -19,13 +21,14 @@ export class ArticleComponent implements OnInit {
   imageButtonTitle: string = "Show Image";
 
   constructor() {
+
     this.articleDescLen = 0;
     this.descToShow = '';
   }
 
   readMore(): void {
     this.articleDescLen == this.symbols;
-    if (this, this.articleDescLen == this.articleDesc.length) {
+    if (this.articleDescLen == this.articleDesc.length) {
       this.showHideBtn = true;
       this.showReadMoreBtn = false;
     } else {
@@ -42,7 +45,7 @@ export class ArticleComponent implements OnInit {
     this.descToShow = "";
     this.articleDescLen = 0;
     this.showHideBtn = false;
-    this.showReadMoreBtn = true; 
+    this.showReadMoreBtn = true;
   }
 
   ngOnInit(): void {

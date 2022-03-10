@@ -7,6 +7,7 @@ import { Article } from '../models/article.model';
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.css']
 })
+
 export class ArticlesComponent implements OnInit {
   articles: Article[] = [];
 
@@ -14,5 +15,7 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles = new ArticleData().getData();
+    console.log(this.articles)
   }
+  
 }
