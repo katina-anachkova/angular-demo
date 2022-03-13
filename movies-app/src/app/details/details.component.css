@@ -1,0 +1,11 @@
+.row {
+    display:flex ;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px 100px 0px 100px;
+}
+
+.thumbnail {
+    width: 70%;
+}
+

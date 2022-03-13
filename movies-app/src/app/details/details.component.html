@@ -6,7 +6,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-5">
-                    <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{myMovie.poster_path}}">
+                    <img class="thumbnail"  src="http://image.tmdb.org/t/p/w500/{{myMovie.poster_path}}">
                 </div>
                 <div class="col-md-7">
                     <ul class="list-group">
@@ -15,8 +15,7 @@
                         <li class="list-group-item">Release Date: {{myMovie.release_date}}</li>
                     </ul>
                     <br>
-                    <a *ngIf="myMovie.homepage" href="{{myMovie.homepage}}" target="_blank" class="btn
-btn-default">Visit Movie Website</a>
+                    <a *ngIf="myMovie.homepage" href="{{myMovie.homepage}}" target="_blank" class="btn btn-default">Visit Movie Website</a>
                 </div>
             </div>
         </div>
