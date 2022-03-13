@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "some-app": {
+    "movies-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "strict": false
+          "strict": true
         }
       },
       "root": "",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/some-app",
+            "outputPath": "dist/movies-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "some-app:build:production"
+              "browserTarget": "movies-app:build:production"
             },
             "development": {
-              "browserTarget": "some-app:build:development"
+              "browserTarget": "movies-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "some-app:build"
+            "browserTarget": "movies-app:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "some-app"
+  "defaultProject": "movies-app"
 }
