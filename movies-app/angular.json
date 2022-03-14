@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "movies-app:build:production",
+            "firebaseProject": "movies-db-2bebc",
+            "firebaseHostingSite": "movies-db-2bebc"
+          }
         }
       }
     }
